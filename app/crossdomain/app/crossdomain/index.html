@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>支持跨域的对象</title>
+</head>
+<body>
+<!--img用于统计链接，可以将数据发到第三方，但是无法从第三方拿数据-->
+<img src="http://www.baidu.com.cn" alt="">
+<!--iframe可以接受服务端数据，但是过程复杂-->
+<iframe src="http://www.baidu.com" frameborder="0"></iframe>
+<!--link可以收到，但是渲染时候会在css阶段报错-->
+<link rel="stylesheet" href="http://bbs.itcast.cn">
+<!--跨域最方便的方式，但是此方法函数必须是全局环境里面-->
+<script src="http://bbs.itcast.cn"></script>
+<script>
+    function callback(data){
+        console.log(data);
+    }
+
+    /*angular提供了一个,不会污染全局的*/
+    (function(angular){
+
+    })(angular);
+    window.angular = {};
+    angular.callback = {};
+    angular.callback._0 = function(){
+        //body....
+    }
+</script>
+
+<script>
+    /*前面加一个;比较严谨*/
+    ;function call(){
+
+    }
+</script>
+</body>
+</html>
