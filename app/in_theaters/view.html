@@ -1,1 +1,27 @@
 <h1 class="page-header">正在热映</h1>
+<!--bootstrap中的组件-->
+<div class="list-group">
+    <a ng-repeat="item in subjects" href="#" class="list-group-item ">
+        <!--评分的bootstrap中徽章-->
+        <span class="badge">{{item.rating.average}}</span>
+        <!--bootstrap中的组件-->
+        <div class="media">
+
+                <img style="float: left;display: inline-block;" src="{{item.images.small}}" alt="item.title.">
+
+            <div class="media-body" style="float: left;">
+                <h2 class="media-heading">{{item.title}}</h2>
+                <!--取一个导演-->
+                <!--<p>导演: <span>{{item.directors[0].name}}</span></p> -->
+                <p>导演:
+                    <span  ng-repeat ='d in item.directors'>
+                    {{d.name}}
+                        <!--最后一个没有、-->
+                        <span ng-if="!$last">、</span>
+                    </span>
+                </p>
+                <p>类型: <span>{{item.genres.join("、")}}</span></p>
+            </div>
+        </div>
+    </a>
+</div>
