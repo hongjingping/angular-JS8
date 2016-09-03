@@ -41,3 +41,14 @@ Math.random();
 
 假数据绑定
 真数据（之前用的是jquery，但是这边引一个jquery来用，有点大材小用，angular里面有个服务$http,可以帮我们取得数据）
+
+跨域请求
+angular.callbacks._0()
+angular中将所有的JSONP的callback都挂在angular.callbacks这个对象上，不会污染全局
+传统的数据请求:
+浏览器发生请求，服务器返回数据，index.html开始执行，发送一个异步请求去请求data.json
+jsonP:XMLhttpRequest这个对象不支持跨域请求
+
+
+
+
