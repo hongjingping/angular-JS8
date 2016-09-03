@@ -1,4 +1,6 @@
 <h1 class="page-header">正在热映</h1>
+<!--message有值的时候才显示-->
+<h2 ng-if="message">{{message}}</h2>
 <!--bootstrap中的组件-->
 <div class="list-group">
     <a ng-repeat="item in subjects" href="#" class="list-group-item ">
@@ -7,7 +9,7 @@
         <!--bootstrap中的组件-->
         <div class="media">
 
-                <img style="float: left;display: inline-block;" src="{{item.images.small}}" alt="item.title.">
+                <img style="float: left;display: inline-block;" ng-src="{{item.images.small}}" alt="item.title.">
 
             <div class="media-body" style="float: left;">
                 <h2 class="media-heading">{{item.title}}</h2>

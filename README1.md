@@ -38,3 +38,6 @@ Math.random();
 取得数据，没有输入:api.douban.com/v2/movie/in_threaters
 输入，取10条:api.douban.com/v2/movie/in_threaters?count=10
 测试API的工具:POSTMAN
+
+假数据绑定
+真数据（之前用的是jquery，但是这边引一个jquery来用，有点大材小用，angular里面有个服务$http,可以帮我们取得数据）
